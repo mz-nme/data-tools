@@ -41,7 +41,7 @@ def main():
 
     st.subheader("Generate UPN XML")
 
-    uploaded_file = st.file_uploader("", type=["xlsx"])
+    uploaded_file = st.file_uploader(type=["xlsx"])
 
     if uploaded_file is not None:
         # Read file
