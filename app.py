@@ -1,9 +1,9 @@
-from st_pages import Page, show_pages
+import st_pages as stp
 
-show_pages(
+stp.show_pages(
     [
-        Page("pages/generate_upn_xml.py", "Generate UPN XML"),
-        Page("pages/convert.py", "Convert"),
-        Page("pages/analyse.py", "Analyse"),
+        stp.Page("pages/generate_upn_xml.py", "Generate UPN XML"),
+        stp.Page("pages/convert.py", "Convert"),
+        stp.Page("pages/analyse.py", "Analyse"),
     ]
 )
