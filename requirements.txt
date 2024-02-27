@@ -1,6 +1,6 @@
 st-pages
 openpyxl
-dataclasses~=0.8
+dataclasses~=0.6
 typing~=3.10.0.0
 streamlit~=1.31.1
 pandas~=2.1.4
