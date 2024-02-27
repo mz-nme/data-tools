@@ -20,13 +20,12 @@ def request(message_type, edited_df, start_date, end_date):
         'Authorization': f'Basic {encoded_string}'
     }
 
-    match message_type:
-        case 'Daily 15 minute':
-            base_url = base_url + '?messageType=D1_15MIN'
-        case 'Monthly 15 minute':
-            base_url = base_url + '?messageType=M1_15MIN'
-        case 'Specify date':
-            base_url = base_url + '?startTime=' + str(start_date) + '&endTime=' + str(end_date)
+    if message_type == 'Daily 15 minute':
+        base_url = base_url + '?messageType=D1_15MIN'
+    elif message_type == 'Monthly 15 minute':
+        base_url = base_url + '?messageType=M1_15MIN'
+    elif message_type == 'Specify date':
+        base_url = base_url + '?startTime=' + str(start_date) + '&endTime=' + str(end_date)
 
     usage_points = edited_df.tolist()
     usage_points_str = '&'.join(f"usagePoints={point}" for point in usage_points)
