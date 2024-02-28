@@ -161,13 +161,14 @@ def convert(path):
 
     st.dataframe(df, use_container_width=True)
 
-    st.download_button(
-        label="Download",
-        type='primary',
-        data=buffer,
-        file_name='prilogaA.xlsx',
-        mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    )
+    if len(data_rows) != 0:
+        st.download_button(
+            label="Download",
+            type='primary',
+            data=buffer,
+            file_name='prilogaA.xlsx',
+            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
 
 
 def main():

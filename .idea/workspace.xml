@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/priloga_a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data-tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +108,7 @@
       <workItem from="1707243190813" duration="43000" />
       <workItem from="1708934194405" duration="13464000" />
       <workItem from="1709017682086" duration="14137000" />
-      <workItem from="1709105858885" duration="7711000" />
+      <workItem from="1709105858885" duration="14195000" />
     </task>
     <servers />
   </component>
