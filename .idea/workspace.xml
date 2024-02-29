@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/priloga_a.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/priloga_a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +113,7 @@
       <workItem from="1709105858885" duration="14195000" />
       <workItem from="1709126594353" duration="213000" />
       <workItem from="1709189870790" duration="3038000" />
-      <workItem from="1709203594169" duration="599000" />
+      <workItem from="1709203594169" duration="939000" />
     </task>
     <servers />
   </component>
