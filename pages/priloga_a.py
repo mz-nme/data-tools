@@ -7,12 +7,12 @@ from datetime import datetime
 
 sifra_izvora_bremenitve = {
     'RR': 'Redni račun na mesečnem obračunu',
-    'SO': 'letni obračun',
-    'OB': 'obrok',
-    'SP': 'popravek, storno, izredni račun'
+    'SO': 'Letni obračun',
+    'OB': 'Obrok',
+    'SP': 'Popravek, storno, izredni račun'
 }
 
-sifra_odjemne_skupine = {
+sifra_napetostni_nivo = {
     '1': 'Visoka napetost',
     '2': 'Visoka napetost',
     '3': 'Visoka napetost',
@@ -55,6 +55,49 @@ sifra_odjemne_skupine = {
     '43': 'Nizka napetost',
 }
 
+sifra_odjemna_skupina = {
+    '1': 'T>=6000 ur, visoka sezona',
+    '2': 'T<2500 ur, visoka sezona',
+    '3': 'T>=6000 ur, nizka sezona',
+    '4': '6000 ur>T>=2500 ur, nizka sezona',
+    '5': 'T<2500 ur, nizka sezona',
+    '6': '6000 ur>T>=2500 ur, visoka sezona',
+    '7': 'T>2500 ur, visoka sezona',
+    '9': 'T>2500 ur, nizka sezona',
+    '10': 'T<2500 ur, visoka sezona',
+    '12': 'T<2500 ur, nizka sezona',
+    '13': 'T>2500 ur, visoka sezona',
+    '14': 'T>2500 ur, nizka sezona',
+    '15': 'T<2500 ur, visoka sezona',
+    '16': 'T<2500 ur, nizka sezona',
+    '18': 'Ostali odjem',
+    '19': 'Gospodinjstvo',
+    '20': 'Javna razsvetljava',
+    '21': 'T>2500 ur, odjem na zbiralkah RTP, visoka sezona',
+    '22': 'T>2500 ur, odjem na zbiralkah RTP, nizka sezona',
+    '23': 'T<2500 ur, odjem na zbiralkah RTP, visoka sezona',
+    '24': 'T<2500 ur, odjem na zbiralkah RTP, nizka sezona',
+    '25': 'T>2500 ur, odjem na zbiralkah TP, visoka sezona',
+    '26': 'T>2500 ur, odjem na zbiralkah TP, nizka sezona',
+    '27': 'T<2500 ur, odjem na zbiralkah TP, visoka sezona',
+    '28': 'T<2500 ur, odjem na zbiralkah TP, nizka sezona',
+    '29': 'Polnjenje EV',
+    '30': 'Gospodinjstvo s KKT',
+    '31': 'Brez merjenja moči s KKT',
+    '32': 'T>=6000 ur',
+    '33': '6000>T>=2500 ur',
+    '34': 'T<2500 ur',
+    '35': 'T>=2500 ur',
+    '36': 'T<2500 ur',
+    '37': 'T>=2500 ur',
+    '38': 'T<2500 ur',
+    '39': 'T>=2500 ur',
+    '40': 'T<2500 ur',
+    '41': 'T>=2500 ur',
+    '42': 'T<2500 ur',
+    '43': 'Brez merjena moči',
+}
+
 sifra_nacina_obracuna = {
     '1': 'Letni obračun',
     '3': 'Mesečni obračun'
@@ -67,11 +110,11 @@ sifra_zaracunljivega_elementa = {
 }
 
 sifra_pridobitve_stanja = {
-    '1': 'izvajalec nalog SODO',
-    '2': 'odjemalec',
+    '1': 'SODO',
+    '2': 'Odjemalec',
     '3': 'Daljinsko odčitavanje',
-    '4': 'ocena izvajalca nalog SODO',
-    'T': 'telefonski odzivnik',
+    '4': 'Ocena SODO',
+    'T': 'Telefonski odzivnik',
     'I': 'Portal'
 }
 
@@ -101,13 +144,6 @@ def calculate_dni_value(start_date, end_date):
     return abs((date2_obj - date1_obj).days) + 1
 
 
-def calculate_odjemna_skupina(text):
-    if text in ['35', '37', '39', '41']: return 'T>=2500 ur'
-    elif text in ['36', '38', '40', '42']: return 'T<2500 ur'
-    elif text == '43': return 'Brez merjenja moči'
-    return ""
-
-
 def convert(path):
     data_rows = []
 
@@ -130,8 +166,8 @@ def convert(path):
                     row_data[alias] = calculate_dni_value(row_data['Obdobje_OD'], row_data['Obdobje_DO'])
 
                 elif column == 'SifraOdjemneSkupine':
-                    row_data['Odjemna_skupina'] = calculate_odjemna_skupina(priloga.find(column).text)
-                    row_data['Napetostni_nivo'] = sifra_odjemne_skupine.get(priloga.find(column).text, priloga.find(column).text)
+                    row_data['Odjemna_skupina'] = sifra_odjemna_skupina.get(priloga.find(column).text, priloga.find(column).text)
+                    row_data['Napetostni_nivo'] = sifra_napetostni_nivo.get(priloga.find(column).text, priloga.find(column).text)
 
                 elif column == 'SifraNacinaObracuna':
                     row_data[alias] = sifra_nacina_obracuna.get(priloga.find(column).text, priloga.find(column).text)
