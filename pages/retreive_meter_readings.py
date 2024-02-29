@@ -1,4 +1,5 @@
 import json
+import zipfile
 import pandas as pd
 import streamlit as st
 import requests
@@ -32,6 +33,23 @@ def request(message_type, edited_df, start_date, end_date):
     complete_url = f"{base_url}&{usage_points_str}"
 
     return requests.get(complete_url, headers=headers)
+
+
+def get_zip(json_response):
+    meter_readings = json_response["meterReadings"]
+
+    zip_buffer = BytesIO()
+
+    with zipfile.ZipFile(zip_buffer, "w") as zip_file:
+        for i, meter_reading in enumerate(meter_readings):
+            usage_point = meter_reading["usagePoint"]
+            filename = f"{usage_point}.json"
+            json_data = json.dumps(meter_reading, separators=(",", ":"))
+            zip_file.writestr(filename, json_data)
+
+    zip_buffer.seek(0)
+
+    return zip_buffer
 
 
 def main():
@@ -69,6 +87,12 @@ def main():
                     data=json.dumps(response.json()),
                     file_name='meter_readings.json',
                     mime='application/json'
+                )
+                st.download_button(
+                    "Download JSON ZIP",
+                    type='primary',
+                    data=get_zip(response.json()),
+                    file_name='meter_readings.zip'
                 )
 
 
