@@ -49,7 +49,7 @@ def main():
         df = pd.read_excel(uploaded_file, converters=converters)
 
         # Convert RokPlacila string to date
-        df['RokPlacila'] = pd.to_datetime(df['RokPlacila'], format='%d%m%Y').dt.strftime('%d.%m.%Y')
+        df['RokPlacila'] = pd.to_datetime(df['RokPlacila'], format='%d.%m.%Y').dt.strftime('%d.%m.%Y')
 
         # Create a text input for filtering
         query = st.text_input("Filter")
