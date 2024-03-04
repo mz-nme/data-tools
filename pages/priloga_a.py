@@ -197,7 +197,6 @@ def convert(path):
                     for sifra, alias in sifra_zaracunljivega.items():
                         for obracun in obracun_vrstice:
                             sifra_elementa = obracun.find('SifraZaracunljivegaElementa')
-                            print(sifra_elementa)
                             if sifra_elementa and sifra_elementa.text == sifra:
                                 kolicina_element = obracun.find('Kolicina')
                                 if kolicina_element:
@@ -211,6 +210,14 @@ def convert(path):
             data_rows.append(row_data)
 
     df = pd.DataFrame(data_rows)
+
+    VT_Kolicina = df.pop('VT_Kolicina')
+    MT_Kolicina = df.pop('MT_Kolicina')
+    ET_Kolicina = df.pop('ET_Kolicina')
+
+    df.insert(21, 'VT_Kolicina', VT_Kolicina)
+    df.insert(27, 'MT_Kolicina', MT_Kolicina)
+    df.insert(33, 'ET_Kolicina', ET_Kolicina)
 
     buffer = BytesIO()
 
