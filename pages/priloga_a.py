@@ -211,13 +211,14 @@ def convert(path):
 
     df = pd.DataFrame(data_rows)
 
-    VT_Kolicina = df.pop('VT_Kolicina')
-    MT_Kolicina = df.pop('MT_Kolicina')
-    ET_Kolicina = df.pop('ET_Kolicina')
+    if 'VT_Kolicina' in df.columns:
+        VT_Kolicina = df.pop('VT_Kolicina')
+        MT_Kolicina = df.pop('MT_Kolicina')
+        ET_Kolicina = df.pop('ET_Kolicina')
 
-    df.insert(21, 'VT_Kolicina', VT_Kolicina)
-    df.insert(27, 'MT_Kolicina', MT_Kolicina)
-    df.insert(33, 'ET_Kolicina', ET_Kolicina)
+        df.insert(21, 'VT_Kolicina', VT_Kolicina)
+        df.insert(27, 'MT_Kolicina', MT_Kolicina)
+        df.insert(33, 'ET_Kolicina', ET_Kolicina)
 
     buffer = BytesIO()
 
