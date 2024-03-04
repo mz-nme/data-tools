@@ -109,6 +109,12 @@ sifra_zaracunljivega_elementa = {
     '6': 'ET'
 }
 
+sifra_zaracunljivega = {
+    '4': 'VT',
+    '5': 'MT',
+    '21': 'ET'
+}
+
 sifra_pridobitve_stanja = {
     '1': 'SODO',
     '2': 'Odjemalec',
@@ -123,6 +129,7 @@ columns = {
     'StevilkaGS1MerilneTocke': 'GS1_MT',
     'TipMerilneTocke': 'Tip_MT',
     'Distribucija': 'Dis',
+    'DavcnaStevilkaPlacnika': 'Davcna_stevilka',
     'SifraIzvoraBremenitve': 'Bremenitev',
     'ObdobjeOd': 'Obdobje_OD',
     'ObdobjeDo': 'Obdobje_DO',
@@ -159,7 +166,10 @@ def convert(path):
 
             for column, alias in columns.items():
 
-                if column == 'SifraIzvoraBremenitve':
+                if column == 'DavcnaStevilkaPlacnika':
+                    row_data[alias] = priloga.find(column).text
+
+                elif column == 'SifraIzvoraBremenitve':
                     row_data[alias] = sifra_izvora_bremenitve.get(priloga.find(column).text, priloga.find(column).text)
 
                 elif column == 'dni':
@@ -180,8 +190,20 @@ def convert(path):
                             row_data[f'{alias}_Odbirek_DO'] = target_tag.find_next('StanjeNovo').find('Odbirek').text
                             row_data[f'{alias}_Razlika'] = target_tag.find_next('StanjeRazlika').text
                             row_data[f'{alias}_Konstanta'] = target_tag.find_next('KonstantaStevca').text
-                            row_data[f'{alias}_Kolicina'] = target_tag.find_next('Kolicina').text
                             row_data[f'{alias}_Pridobitev'] = sifra_pridobitve_stanja.get(target_tag.find_next('SifraNacinaPridobitveStanja').text, target_tag.find_next('SifraNacinaPridobitveStanja').text)
+
+                    obracun_vrstice = priloga.find_all('ObracunVrstica')
+
+                    for sifra, alias in sifra_zaracunljivega.items():
+                        for obracun in obracun_vrstice:
+                            sifra_elementa = obracun.find('SifraZaracunljivegaElementa')
+                            print(sifra_elementa)
+                            if sifra_elementa and sifra_elementa.text == sifra:
+                                kolicina_element = obracun.find('Kolicina')
+                                if kolicina_element:
+                                    kolicina_value = kolicina_element.text
+                                    row_data[f'{alias}_Kolicina'] = kolicina_value
+                                    break
 
                 else:
                     row_data[alias] = priloga.find(column).text
