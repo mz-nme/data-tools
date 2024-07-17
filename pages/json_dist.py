@@ -166,7 +166,7 @@ def save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora):
 
 
 def main():
-    st.set_page_config(layout="wide")
+    st.set_page_config(layout="centered")
 
     st.subheader("Json to distributions")
 
