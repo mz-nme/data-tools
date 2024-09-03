@@ -161,7 +161,7 @@ def save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora):
     zip_io.seek(0)
 
     # Create a download button for the zip file
-    st.download_button(label="Download Zip File", data=zip_io, file_name='files.zip', mime='application/zip',
+    st.download_button(label="Download", data=zip_io, file_name='files.zip', mime='application/zip',
                        key='zip_file')
 
 
@@ -202,6 +202,4 @@ def main():
 
                 save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora)
 
-
-if __name__ == "__main__":
-    main()
+main()

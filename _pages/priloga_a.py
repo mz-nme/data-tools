@@ -250,6 +250,4 @@ def main():
     if path is not None:
         convert(path)
 
-
-if __name__ == "__main__":
-    main()
+main()

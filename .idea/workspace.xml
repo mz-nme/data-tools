@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/data-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data-tools.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/priloga_a.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/priloga_a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/analyse.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/analyse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ceepsdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/ceepsdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/convert.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/generate_upn_xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/generate_upn_xml.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/json_dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/json_dist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mqdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/mqdata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/priloga_a.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/priloga_a.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/priloga_b.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/priloga_b.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/retreive_meter_readings.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/retreive_meter_readings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +34,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mz-nme"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mz-nme/data-tools.git",
+    "accountId": "c1fe9da0-a72c-478d-b9a7-e87305585aa7"
+  }
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -35,25 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.convert.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.run.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Mark/Git/playground&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.app.executor": "Run",
+    "Python.convert.executor": "Debug",
+    "Python.run.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Mark/git/data-tools/.streamlit",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Mark\git\data-tools\.streamlit" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Mark\Git\data-tools\pages" />
       <recent name="C:\Mark\Git\data-tools" />
@@ -69,7 +95,6 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="SDK_NAME" value="C:\Users\Uporabnik\anaconda3" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -88,7 +113,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-PY-242.20224.428" />
+        <option value="bundled-python-sdk-80e8e15d2b92-39cff9de6eef-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.20224.428" />
       </set>
     </attachedChunks>
   </component>
@@ -116,6 +142,7 @@
       <workItem from="1709189870790" duration="3038000" />
       <workItem from="1709203594169" duration="1214000" />
       <workItem from="1709536968710" duration="6084000" />
+      <workItem from="1725361072846" duration="5851000" />
     </task>
     <servers />
   </component>

@@ -64,6 +64,4 @@ def main():
 
         st.download_button("Download XML", type='primary', data=convert(edited_df), file_name='book_import.xml', mime='application/xml')
 
-
-if __name__ == "__main__":
-    main()
+main()
