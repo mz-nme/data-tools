@@ -1,7 +1,7 @@
 import streamlit as st
 import zipfile
 from pandas import json_normalize, to_datetime, DataFrame, read_excel, MultiIndex, concat, ExcelWriter
-from traceback import print_exc
+import traceback
 from json import load
 from io import BytesIO
 
@@ -132,37 +132,56 @@ def save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora):
 
     # Initialize a ZipFile object
     with zipfile.ZipFile(zip_io, 'w', zipfile.ZIP_DEFLATED) as zip_file:
-        for df_dict, operation in [(df_dict_dobava, 'Odjem'), (df_dict_odkup, 'Oddaja'),
-                                   (df_dict_podpora, 'Obratovalna_podpora')]:
-            for key in df_dict:
-                if df_dict[key].empty:
-                    continue
+        data_and_names = [
+            (df_dict_dobava, 'Odjem.xlsx'),
+            (df_dict_odkup, 'Oddaja.xlsx'),
+            (df_dict_podpora, 'Obratovalna_podpora.xlsx')
+        ]
 
-                df_dict[key] = df_dict[key].reindex(sorted(df_dict[key].columns), axis=1)
-                df_dict[key] = df_dict[key].groupby('timestamp').sum().reset_index(col_level=1)
+        for df_dict, excel_filename in data_and_names:
+            if all(df.empty for df in df_dict.values()):
+                continue
 
-                filename = operation + '/' + distribucije[key] + '_' + operation.lower() + '.xlsx'
+            try:
+                output = BytesIO()
 
-                try:
-                    # Initialize a BytesIO object for the Excel file
-                    output = BytesIO()
-                    with ExcelWriter(output, engine='xlsxwriter') as writer:
-                        df_dict[key].to_excel(writer, sheet_name='15min')
-                        writer.sheets['15min'].set_row(2, None, None, {'hidden': True})
-                    output.seek(0)
+                with ExcelWriter(output, engine='xlsxwriter') as writer:
+                    for key in df_dict:
+                        if df_dict[key].empty:
+                            continue
 
-                    # Add the Excel file to the zip file
-                    zip_file.writestr(filename, output.getvalue())
-                except Exception as e:
-                    print_exc()
-                    print("ERROR - Could not write: " + filename)
+                        # Sort columns and group by 'timestamp'
+                        df_dict[key] = df_dict[key].reindex(sorted(df_dict[key].columns), axis=1)
+                        df_dict[key] = df_dict[key].groupby('timestamp').sum().reset_index(col_level=1)
+
+                        df_dict[key] = df_dict[key].drop(index=2, errors='ignore')
+
+                        sheet_name = distribucije[key]
+
+                        # Write each key as a separate sheet in the Excel file
+                        df_dict[key].to_excel(writer, sheet_name=sheet_name)
+
+                        writer.sheets[sheet_name].set_row(2, None, None, {'hidden': True})
+
+                        writer.sheets[sheet_name].autofit()
+                        writer.sheets[sheet_name].set_column_pixels(1, 1, 130)
+
+                        writer.sheets[sheet_name].set_selection(3, 2, 3, 2)
+
+                output.seek(0)
+
+                # Add the Excel file to the zip file
+                zip_file.writestr(excel_filename, output.getvalue())
+
+            except Exception as e:
+                traceback.print_exc()
+                print(f"ERROR - Could not write: {excel_filename}")
 
     # Move the file pointer of the zip file back to the start
     zip_io.seek(0)
 
     # Create a download button for the zip file
-    st.download_button(label="Download", data=zip_io, file_name='files.zip', mime='application/zip',
-                       key='zip_file')
+    st.download_button(label="Download", data=zip_io, file_name='files.zip', mime='application/zip', key='zip_file')
 
 
 def main():
@@ -172,7 +191,7 @@ def main():
 
     uploaded_files = st.file_uploader(label="Upload files", type=["json"], accept_multiple_files=True)
 
-    filetype = st.selectbox("Choose the format of the uploaded files", ('MQ', 'CEEPS'))
+    filetype = st.selectbox("Choose the format of the uploaded files", ('CEEPS', 'MQ'))
 
     mt_dist_file = st.file_uploader(label="Upload mt_dist file", type=["xlsx"])
 
