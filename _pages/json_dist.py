@@ -154,8 +154,6 @@ def save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora):
                         df_dict[key] = df_dict[key].reindex(sorted(df_dict[key].columns), axis=1)
                         df_dict[key] = df_dict[key].groupby('timestamp').sum().reset_index(col_level=1)
 
-                        df_dict[key] = df_dict[key].drop(index=2, errors='ignore')
-
                         sheet_name = distribucije[key]
 
                         # Write each key as a separate sheet in the Excel file
