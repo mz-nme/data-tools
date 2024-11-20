@@ -6,8 +6,6 @@ import streamlit as st
 import requests
 from io import BytesIO
 
-from watchdog.utils.echo import echo_class
-
 
 def convert(response_json):
     json_file = BytesIO()

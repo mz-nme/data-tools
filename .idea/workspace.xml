@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/data-tools.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data-tools.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="79eab567-dc32-4abc-8bf1-bb26aed273ac" name="Changes" comment="Json to distributions deleted row fix">
+      <change afterPath="$PROJECT_DIR$/_pages/mojelektro_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/json_dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/json_dist.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/priloga_b.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/priloga_b.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_pages/retreive_meter_readings.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/retreive_meter_readings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/analyse.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/analyse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ceepsdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/ceepsdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/convert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/generate_upn_xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/generate_upn_xml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/json_dist.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/json_dist.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mqdata.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/mqdata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/priloga_a.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/priloga_a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/priloga_b.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/priloga_b.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/retreive_meter_readings.py" beforeDir="false" afterPath="$PROJECT_DIR$/_pages/retreive_meter_readings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "mz-nme"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mz-nme&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/mz-nme/data-tools.git",
-    "accountId": "c1fe9da0-a72c-478d-b9a7-e87305585aa7"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/mz-nme/data-tools.git&quot;,
+    &quot;accountId&quot;: &quot;c1fe9da0-a72c-478d-b9a7-e87305585aa7&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -58,24 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.app.executor": "Run",
-    "Python.convert.executor": "Debug",
-    "Python.run.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Mark/git/data-tools/.streamlit",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.convert.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.run.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Mark/git/data-tools&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Mark\git\data-tools\.streamlit" />
@@ -142,17 +135,70 @@
       <workItem from="1709189870790" duration="3038000" />
       <workItem from="1709203594169" duration="1214000" />
       <workItem from="1709536968710" duration="6084000" />
-      <workItem from="1725361072846" duration="5851000" />
+      <workItem from="1725361072846" duration="10897000" />
+      <workItem from="1725815856488" duration="24000" />
+      <workItem from="1726389944442" duration="3657000" />
+      <workItem from="1726411669225" duration="11000" />
+      <workItem from="1726464425332" duration="116000" />
+      <workItem from="1726654077099" duration="16000" />
+      <workItem from="1730290752083" duration="2984000" />
+      <workItem from="1730538154608" duration="35000" />
+      <workItem from="1730881993987" duration="1294000" />
+      <workItem from="1730914295807" duration="28000" />
+      <workItem from="1730977054903" duration="2121000" />
+      <workItem from="1731053038617" duration="38000" />
+      <workItem from="1731053078267" duration="1206000" />
+      <workItem from="1731171939950" duration="30000" />
+      <workItem from="1731328772777" duration="601000" />
+      <workItem from="1731349764345" duration="41000" />
+      <workItem from="1731486762377" duration="257000" />
+      <workItem from="1731523390110" duration="141000" />
+      <workItem from="1731566454440" duration="199000" />
+      <workItem from="1731574158049" duration="4862000" />
+      <workItem from="1731651547571" duration="111000" />
+      <workItem from="1731671816602" duration="3869000" />
+      <workItem from="1731742964388" duration="853000" />
+      <workItem from="1731824592788" duration="3345000" />
+      <workItem from="1731996541198" duration="3420000" />
+      <workItem from="1732083563344" duration="772000" />
     </task>
+    <task id="LOCAL−00001" summary="Streamlit 1.38 migration with additional access">
+      <option name="closed" value="true" />
+      <created>1725367669701</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1725367669701</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Json to distributions upgrade">
+      <option name="closed" value="true" />
+      <created>1726393619910</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1726393619910</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Json to distributions deleted row fix">
+      <option name="closed" value="true" />
+      <created>1726464534373</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1726464534373</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Streamlit 1.38 migration with additional access" />
+    <MESSAGE value="Json to distributions upgrade" />
+    <MESSAGE value="Json to distributions deleted row fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Json to distributions deleted row fix" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/data_reports$app.coverage" NAME="app Coverage Results" MODIFIED="1706004210068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/data_tools$app.coverage" NAME="app Coverage Results" MODIFIED="1706171155887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/data_tools$run.coverage" NAME="run Coverage Results" MODIFIED="1708935887401" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/data_tools$convert.coverage" NAME="convert Coverage Results" MODIFIED="1706189893218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pages" />
+    <SUITE FILE_PATH="coverage/data_tools$app.coverage" NAME="app Coverage Results" MODIFIED="1706171155887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/data_tools$run.coverage" NAME="run Coverage Results" MODIFIED="1731911196219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

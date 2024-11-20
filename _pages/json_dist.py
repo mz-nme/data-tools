@@ -114,15 +114,18 @@ def get_dataframes_mq_json(readings):
 def get_dataframes_ceeps_json(readings):
     dataframes = []
     for meter_reading in readings.values():
-        try:
-            interval_readings = meter_reading['intervalBlocks'][0]['intervalReadings']
-        except IndexError:
-            st.write("INFO: Empty interval readings for " + meter_reading['usagePoint'] + ".")
-            continue
-        # Use code from MQ because it is the same from this point forward
-        df = create_df_from_mq_json(meter_reading, interval_readings)
-        if df is not None:
-            dataframes.append(df)
+        print(meter_reading['intervalBlocks'])
+        for idx, intervalBlock in enumerate(meter_reading['intervalBlocks']):
+            try:
+                interval_readings = meter_reading['intervalBlocks'][idx]['intervalReadings']
+            except IndexError:
+                st.write("INFO: Empty interval readings for " + meter_reading['usagePoint'] + ".")
+                continue
+            # Use code from MQ because it is the same from this point forward
+            df = create_df_from_mq_json(meter_reading, interval_readings)
+            if df is not None:
+                dataframes.append(df)
+
     return dataframes
 
 

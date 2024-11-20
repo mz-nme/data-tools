@@ -391,14 +391,14 @@ def extract_merilni_podatki(priloga):
         sifra = item.findtext('SifraZaracunljivegaElementa')
         entry = {
             sifra + '_SifraZaracunljivegaElementa': sifra_zaracunljivega_elementa[sifra],
-            sifra + '_StanjeStaro_Odbirek': item.find('StanjeStaro/Odbirek').text,
+            sifra + '_StanjeStaro_Odbirek': item.find('StanjeStaro/Odbirek').text.replace(".", ","),
             sifra + '_StanjeStaro_DatumStanja': item.find('StanjeStaro/DatumStanja').text,
-            sifra + '_StanjeNovo_Odbirek': item.find('StanjeNovo/Odbirek').text,
+            sifra + '_StanjeNovo_Odbirek': item.find('StanjeNovo/Odbirek').text.replace(".", ","),
             sifra + '_StanjeNovo_DatumStanja': item.find('StanjeNovo/DatumStanja').text,
-            sifra + '_StanjeRazlika': item.findtext('StanjeRazlika'),
+            sifra + '_StanjeRazlika': item.findtext('StanjeRazlika').replace(".", ","),
             sifra + '_SifraNacinaPridobitveStanja': sifra_pridobitve_stanja[item.findtext('SifraNacinaPridobitveStanja')],
-            sifra + '_KonstantaStevca': item.findtext('KonstantaStevca'),
-            sifra + '_Kolicina': item.findtext('Kolicina'),
+            sifra + '_KonstantaStevca': item.findtext('KonstantaStevca').replace(".", ","),
+            sifra + '_Kolicina': item.findtext('Kolicina').replace(".", ","),
             sifra + '_SifraKorekcijeKolicin': sifra_korekcije_kolicin[item.findtext('SifraKorekcijeKolicin')]
         }
         data.append(entry)
@@ -413,12 +413,12 @@ def extract_obracunski_podatki(priloga):
             sifra + '_SifraZaracunljivegaElementa': sifra_zaracunljivega_elementa[sifra],
             sifra + '_ObdobjeOd': item.find('ObdobjeOd').text,
             sifra + '_ObdobjeDo': item.find('ObdobjeDo').text,
-            sifra + '_Kolicina': item.find('Kolicina').text,
+            sifra + '_Kolicina': item.find('Kolicina').text.replace(".", ","),
             sifra + '_EnotaMere': item.find('EnotaMere').text,
-            sifra + '_Cena': item.find('Cena/Cena').text,
+            sifra + '_Cena': item.find('Cena/Cena').text.replace(".", ","),
             sifra + '_DatumUveljavitveCene': item.find('Cena/DatumUveljavitveCene').text,
             sifra + '_Valuta': item.find('Cena/Valuta').text,
-            sifra + '_Znesek': item.find('Znesek').text,
+            sifra + '_Znesek': item.find('Znesek').text.replace(".", ","),
             sifra + '_StopnjaDDV': item.find('StopnjaDDV').text,
         }
         data.append(entry)
@@ -431,7 +431,7 @@ def extract_sumarne_kolicine(priloga):
         sifra = item.findtext('SifraZaracunljivegaElementa')
         entry = {
             sifra + '_SifraZaracunljivegaElementa': sifra_zaracunljivega_elementa[sifra],
-            sifra + '_SumarnaKolicina': item.find('SumarnaKolicina').text,
+            sifra + '_SumarnaKolicina': item.find('SumarnaKolicina').text.replace(".", ","),
         }
         data.append(entry)
     return data
