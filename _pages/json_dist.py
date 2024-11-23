@@ -13,6 +13,8 @@ distribucije = {
     7: "7_Elektro_Primorska"
 }
 
+missing_data = []
+
 
 def get_dist_for_metering_point(metering_point, dobava_mt_df, odkup_mt_df, podpora_mt_df):
     df_dict = {"dobava": dobava_mt_df, "odkup": odkup_mt_df, "podpora": podpora_mt_df}
@@ -84,6 +86,11 @@ def merge_to_dist_dfs(dataframes, mt_dist_file):
 
 
 def create_df_from_mq_json(meter_reading, interval_readings):
+    for reading in interval_readings:
+        if len(reading.get('readingQualities')) != 0:
+            missing_data.append(meter_reading['usagePoint'])
+            break
+
     df = json_normalize(interval_readings)
     df = df[['timestamp', 'value']]
     df.attrs['messageType'] = meter_reading['messageType']
@@ -114,7 +121,6 @@ def get_dataframes_mq_json(readings):
 def get_dataframes_ceeps_json(readings):
     dataframes = []
     for meter_reading in readings.values():
-        print(meter_reading['intervalBlocks'])
         for idx, intervalBlock in enumerate(meter_reading['intervalBlocks']):
             try:
                 interval_readings = meter_reading['intervalBlocks'][idx]['intervalReadings']
@@ -221,5 +227,7 @@ def main():
                 df_dict_dobava, df_dict_odkup, df_dict_podpora = merge_to_dist_dfs(dataframes, mt_dist_file)
 
                 save_distributions(df_dict_dobava, df_dict_odkup, df_dict_podpora)
+
+                st.dataframe(missing_data)
 
 main()
