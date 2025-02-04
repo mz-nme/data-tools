@@ -436,6 +436,23 @@ def extract_sumarne_kolicine(priloga):
         data.append(entry)
     return data
 
+def flatten_data(data):
+    flattened_data = []
+    for priloga in data:
+        row = {}
+        for section in priloga:
+            for index, item in enumerate(section):
+                for column, value in item.items():
+                    # Check for duplicate column
+                    st.write()
+                    if column in row.keys():
+                        column = column + "_" + str(index)
+                        row[column] = value
+                    else:
+                        row[column] = value
+        flattened_data.append(row)
+    return flattened_data
+
 
 def convert(path):
     data = []
@@ -455,14 +472,7 @@ def convert(path):
                 extract_obracunski_podatki(priloga),
             ])
 
-    flattened_data = []
-    for priloga in data:
-        row = {}
-        for section in priloga:
-            for item in section:
-                for column, value in item.items():
-                    row[column] = value
-        flattened_data.append(row)
+    flattened_data = flatten_data(data)
 
     df = pd.DataFrame(flattened_data)
     st.dataframe(df, use_container_width=True)
